@@ -81,7 +81,7 @@ class login extends CI_Controller
 		if (isset($_POST['btn_login'])) {
 			$user_id = $this->input->post('user_id');
 			$user_password = $this->input->post('user_password');
-			$user_password = md5($user_password);
+			// $user_password = md5($user_password);
 			$loginadmin = $this->m_public->user_login_admin($user_id, $user_password);
 			if (!empty($loginadmin->row())) {
 				foreach ($loginadmin->result() as $row) {
