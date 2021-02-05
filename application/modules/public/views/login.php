@@ -58,6 +58,8 @@
 							<div class="form-group">
 								<label>NPM</label>
 								<input type="text" name="npm" id="npm" class="form-control">
+								<label>Password</label>
+								<input type="text" name="npmpassword" id="npm" class="form-control">
 							</div>
 							<div class="form-group">
 								<button type="submit" name="btn_login" id="btn_login" class="btn btn-success form-control" value="Masuk">

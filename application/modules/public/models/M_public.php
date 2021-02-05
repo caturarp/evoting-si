@@ -1,4 +1,4 @@
-<?php
+  <?php
 class m_public extends CI_Model
 {
 	public function user_login_admin($user_id, $user_password)
@@ -6,14 +6,14 @@ class m_public extends CI_Model
 		$query = $this->db->query("SELECT * FROM user WHERE USER_ID = '$user_id' AND USER_PASSWORD = '$user_password'");
 		return $query;
 	}
-	public function user_login($npm)
+	public function user_login($npm, $npmpassword)
 	{
-		$query = $this->db->query("SELECT * FROM user WHERE USER_ID = '$npm'");
+		$query = $this->db->query("SELECT * FROM user WHERE USER_ID = '$npm' AND USER_PASSWORD ='$user_password'");
 		return $query;
 	}
 	public function pemira_aktif()
 	{
-		$query = $this->db->query("SELECT * FROM pemira WHERE PEMIRA_STATUS = 'y'");
+ 		$query = $this->db->query("SELECT * FROM pemira WHERE PEMIRA_STATUS = 'y'");
 		return $query;
 	}
 	public function pemira_cekpengisian($npm, $pemira_id)

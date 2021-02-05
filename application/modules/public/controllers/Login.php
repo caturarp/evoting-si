@@ -24,10 +24,10 @@ class login extends CI_Controller
 		if (isset($_POST['btn_login'])) {
 			$this->load->model('m_public');
 			$npm = $this->input->post('npm');
-
 			$npm_angkatan = substr($npm, 0, 2);
+			$npmpassword = $this->input->post('npmpassword');
 			$npm_angkatan = "20" . $npm_angkatan;
-			$login = $this->m_public->user_login($npm);
+			$login = $this->m_public->user_login($npm,$npmpassword);
 			$caripemiraaktif = $this->m_public->pemira_aktif();
 			if (!empty($caripemiraaktif->row())) {
 				foreach ($caripemiraaktif->result() as $row) {
@@ -46,7 +46,7 @@ class login extends CI_Controller
 										if ($row->USER_LEVEL == "mahasiswa") {
 											redirect('mahasiswa/voting');
 										} else {
-											$this->session->set_flashdata('msg', $this->pesan('danger', 'NPM Tidak Terdaftar'));
+											$this->session->set_flashdata('msg', $this->pesan('danger', 'NPM Tidak Terdaftar bro'));
 											redirect('public/login');
 										}
 									} else {
@@ -55,7 +55,7 @@ class login extends CI_Controller
 									}
 								}
 							} else {
-								$this->session->set_flashdata('msg', $this->pesan('danger', 'NPM Tidak Terdaftar'));
+								$this->session->set_flashdata('msg', $this->pesan('danger', 'NPM Tidak Terdaftar bu'));
 								redirect('public/login');
 							}
 						} else {
