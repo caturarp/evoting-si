@@ -8,7 +8,7 @@ class m_public extends CI_Model
 	}
 	public function user_login($npm, $npmpassword)
 	{
-		$query = $this->db->query("SELECT * FROM user WHERE USER_ID = '$npm' AND USER_PASSWORD ='$user_password'");
+		$query = $this->db->query("SELECT * FROM user WHERE USER_ID = '$npm' AND USER_PASSWORD ='$npmpassword'");
 		return $query;
 	}
 	public function pemira_aktif()
